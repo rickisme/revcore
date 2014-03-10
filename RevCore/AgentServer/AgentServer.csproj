@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E631F645-9F1F-4CF3-ADB7-750DE81D9E31}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgentServer</RootNamespace>
+    <AssemblyName>AgentServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\SWorking\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>small.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentServer.cs" />
+    <Compile Include="InnerNetwork\Read\RpRegisteredServer.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkConnection.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkListener.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkMessage.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkOpcode.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkRecvPacket.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkSendPacket.cs" />
+    <Compile Include="InnerNetwork\InnerWireProtocol.cs" />
+    <Compile Include="OuterNetwork\Read\RpAuth.cs" />
+    <Compile Include="OuterNetwork\Read\RpSelectSrv.cs" />
+    <Compile Include="OuterNetwork\Read\RpServerList.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkConnection.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkListener.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkMessage.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkOpcode.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkRecvPacket.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkSendPacket.cs" />
+    <Compile Include="OuterNetwork\OuterWireProtocol.cs" />
+    <Compile Include="OuterNetwork\Write\SpAuth.cs" />
+    <Compile Include="OuterNetwork\Write\SpSelectSrv.cs" />
+    <Compile Include="OuterNetwork\Write\SpServerList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseFactory\DatabaseFactory.csproj">
+      <Project>{B0287521-3B19-4B7B-9826-41DC15FAB4C6}</Project>
+      <Name>DatabaseFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{0C0CA346-FEFF-46A3-BC64-03E0981AD1A0}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Global\Global.csproj">
+      <Project>{3DA233D3-BF30-4E32-8E36-1814F324FDAB}</Project>
+      <Name>Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\packages\Scs-Sources\Scs-Sources\Scs\Scs.csproj">
+      <Project>{0DC81B09-3ABF-4BB3-8C08-4E8EE4432BDC}</Project>
+      <Name>Scs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{645A8FAD-D6F0-400E-826B-D57B8CA0E65A}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InnerNetwork\Write\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="small.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

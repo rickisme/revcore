@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22E3D1A5-FC15-453C-8D9C-6A8839AB75DF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorldServer</RootNamespace>
+    <AssemblyName>WorldServer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\SWorking\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>small.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KeraLua, Version=1.3.0.0, Culture=neutral, PublicKeyToken=04d04586786c6f34, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RevCore - Copy\trunk\RevCore\packages\NLua.1.3.0.2\lib\net40\x64\KeraLua.dll</HintPath>
+    </Reference>
+    <Reference Include="Nini, Version=1.1.0.0, Culture=neutral, PublicKeyToken=691faec150a7fa7b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Trove.Nini.1.1.0.0\lib\net20\Nini.dll</HintPath>
+    </Reference>
+    <Reference Include="NLua, Version=1.3.0.0, Culture=neutral, PublicKeyToken=8df2ab518030ea95, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RevCore - Copy\trunk\RevCore\packages\NLua.1.3.0.2\lib\net40\x64\NLua.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminEngine\ACommand.cs" />
+    <Compile Include="AdminEngine\AdminCommands\AddSkill.cs" />
+    <Compile Include="AdminEngine\DevelopCommands\FakeSendPacket.cs" />
+    <Compile Include="AdminEngine\AdminCommands\AddItem.cs" />
+    <Compile Include="AdminEngine\AdminCommands\Goto.cs" />
+    <Compile Include="AdminEngine\AdminCommands\KillTarget.cs" />
+    <Compile Include="AdminEngine\AdminCommands\RemoveItem.cs" />
+    <Compile Include="AdminEngine\AdminCommands\Set.cs" />
+    <Compile Include="AdminEngine\AdminEngine.cs" />
+    <Compile Include="AdminEngine\DevelopCommands\LokokIDFactory.cs" />
+    <Compile Include="AdminEngine\UserCommands\Help.cs" />
+    <Compile Include="AdminEngine\UserCommands\Info.cs" />
+    <Compile Include="AdminEngine\WaitMessageHandle.cs" />
+    <Compile Include="AiEngine\DefaultAi.cs" />
+    <Compile Include="AiEngine\NpcAi.cs" />
+    <Compile Include="AiEngine\PlayerAi.cs" />
+    <Compile Include="Config\Custom.cs" />
+    <Compile Include="Config\Rate.cs" />
+    <Compile Include="Controllers\BattleController.cs" />
+    <Compile Include="Controllers\DeathController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\NpcBattleController.cs" />
+    <Compile Include="Controllers\NpcMoveController.cs" />
+    <Compile Include="DungeonEngine\Dungeons\ADungeon.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\MapInstanceExtensions.cs" />
+    <Compile Include="InnerNetwork\Write\SpRegisteredServer.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkMessage.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkOpcode.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkRecvPacket.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkSendPacket.cs" />
+    <Compile Include="InnerNetwork\InnerWireProtocol.cs" />
+    <Compile Include="OuterNetwork\Read\RpAttack.cs" />
+    <Compile Include="OuterNetwork\Read\RpAuth.cs" />
+    <Compile Include="OuterNetwork\Read\RpChatMessage.cs" />
+    <Compile Include="OuterNetwork\Read\RpCheckName.cs" />
+    <Compile Include="OuterNetwork\Read\RpCreatePlayer.cs" />
+    <Compile Include="OuterNetwork\Read\RpEnterGame.cs" />
+    <Compile Include="OuterNetwork\Read\RpFindTeammate.cs" />
+    <Compile Include="OuterNetwork\Read\RpInventoryMove.cs" />
+    <Compile Include="OuterNetwork\Read\RpItemDelete.cs" />
+    <Compile Include="OuterNetwork\Read\RpLearnSkill.cs" />
+    <Compile Include="OuterNetwork\Read\RpLevelUpAbility.cs" />
+    <Compile Include="OuterNetwork\Read\RpMove.cs" />
+    <Compile Include="OuterNetwork\Read\RpExitGame.cs" />
+    <Compile Include="OuterNetwork\Read\RpItemPickUp.cs" />
+    <Compile Include="OuterNetwork\Read\RpOpenOnlineShop.cs" />
+    <Compile Include="OuterNetwork\Read\RpOpenDialog.cs" />
+    <Compile Include="OuterNetwork\Read\RpPlayerDiedDialog.cs" />
+    <Compile Include="OuterNetwork\Read\RpPlayerAction.cs" />
+    <Compile Include="OuterNetwork\Read\RpPlayerLogout.cs" />
+    <Compile Include="OuterNetwork\Read\RpPremiumRevive.cs" />
+    <Compile Include="OuterNetwork\Read\RpSettingOption.cs" />
+    <Compile Include="OuterNetwork\Read\RpTargetSelected.cs" />
+    <Compile Include="OuterNetwork\Read\RpUNK008F.cs" />
+    <Compile Include="OuterNetwork\Read\RpPlayerList.cs" />
+    <Compile Include="OuterNetwork\Read\RpUNK00B0.cs" />
+    <Compile Include="OuterNetwork\Read\RpUNK1638.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkConnection.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkListener.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkMessage.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkOpcode.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkRecvPacket.cs" />
+    <Compile Include="OuterNetwork\OuterNetworkSendPacket.cs" />
+    <Compile Include="OuterNetwork\OuterWireProtocol.cs" />
+    <Compile Include="OuterNetwork\Read\RpUseItem.cs" />
+    <Compile Include="OuterNetwork\Read\RpUseSkill.cs" />
+    <Compile Include="OuterNetwork\SystemMessages.cs" />
+    <Compile Include="OuterNetwork\Write\SpAttack.cs" />
+    <Compile Include="OuterNetwork\Write\SpCraftList.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerExpAndPointUp.cs" />
+    <Compile Include="OuterNetwork\Write\SpAuth.cs" />
+    <Compile Include="OuterNetwork\Write\SpBindPoint.cs" />
+    <Compile Include="OuterNetwork\Write\SpChatMessage.cs" />
+    <Compile Include="OuterNetwork\Write\SpDropRemove.cs" />
+    <Compile Include="OuterNetwork\Write\SpEquipInfo.cs" />
+    <Compile Include="OuterNetwork\Write\SpExit.cs" />
+    <Compile Include="OuterNetwork\Write\SpInventoryInfo.cs" />
+    <Compile Include="OuterNetwork\Write\SpInventoryMove.cs" />
+    <Compile Include="OuterNetwork\Write\SpInventoryQuest.cs" />
+    <Compile Include="OuterNetwork\Write\SpItemDelete.cs" />
+    <Compile Include="OuterNetwork\Write\SpItemEffect.cs" />
+    <Compile Include="OuterNetwork\Write\SpLearnSkillMessage.cs" />
+    <Compile Include="OuterNetwork\Write\SpNpcAttack.cs" />
+    <Compile Include="OuterNetwork\Write\SpNpcDespawn.cs" />
+    <Compile Include="OuterNetwork\Write\SpNpcMove.cs" />
+    <Compile Include="OuterNetwork\Write\SpNpcSpawn.cs" />
+    <Compile Include="OuterNetwork\Write\SpOpenOnlineShop.cs" />
+    <Compile Include="OuterNetwork\Write\SpOpenShop.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerAction.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerLevelUp.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerLogout.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerRemove.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerHpMpSp.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerInfo.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerList.cs" />
+    <Compile Include="OuterNetwork\Write\SpCheckName.cs" />
+    <Compile Include="OuterNetwork\Write\SpCreatePlayer.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerMove.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerQuickInfo.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerRunning.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerSetSpell.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerSkillNormal.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerStats.cs" />
+    <Compile Include="OuterNetwork\Write\SpPremiumRevive.cs" />
+    <Compile Include="OuterNetwork\Write\SpPrivateShopInfo.cs" />
+    <Compile Include="OuterNetwork\Write\SpQuestList.cs" />
+    <Compile Include="OuterNetwork\Write\SpServerTime.cs" />
+    <Compile Include="OuterNetwork\Write\SpSetLocation.cs" />
+    <Compile Include="OuterNetwork\Write\SpShoutMessage.cs" />
+    <Compile Include="OuterNetwork\Write\SpTest.cs" />
+    <Compile Include="OuterNetwork\Write\SpItemPickupMsg.cs" />
+    <Compile Include="OuterNetwork\Write\SpUNK0020.cs" />
+    <Compile Include="OuterNetwork\Write\SpCreatureDied.cs" />
+    <Compile Include="OuterNetwork\Write\SpDropInfo.cs" />
+    <Compile Include="OuterNetwork\Write\SpUNK007B.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerDPoint.cs" />
+    <Compile Include="OuterNetwork\Write\SpPlayerSkillEffect.cs" />
+    <Compile Include="OuterNetwork\Write\SpUNK1639.cs" />
+    <Compile Include="OuterNetwork\Write\SpUseItem.cs" />
+    <Compile Include="OuterNetwork\Write\SpWeightMoney.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuestEngine\QuestEngine.cs" />
+    <Compile Include="ScriptEngine\ScriptEngine.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\AiService.cs" />
+    <Compile Include="Services\ChatService.cs" />
+    <Compile Include="Services\ControllerService.cs" />
+    <Compile Include="Services\DialogService.cs" />
+    <Compile Include="Services\FeedbackService.cs" />
+    <Compile Include="Services\MapService.cs" />
+    <Compile Include="Services\ObserverService.cs" />
+    <Compile Include="Services\PlayerService.cs" />
+    <Compile Include="Services\ShopService.cs" />
+    <Compile Include="Services\SkillsLearnService.cs" />
+    <Compile Include="Services\StatsService.cs" />
+    <Compile Include="Services\StorageService.cs" />
+    <Compile Include="Services\TeamService.cs" />
+    <Compile Include="Services\TeleportService.cs" />
+    <Compile Include="Services\VisibleService.cs" />
+    <Compile Include="SkillEngine\AbilityProcessor.cs" />
+    <Compile Include="SkillEngine\AbilityEffectsProvider.cs" />
+    <Compile Include="SkillEngine\Effects\EfArmorCrush.cs" />
+    <Compile Include="SkillEngine\Effects\EfAuroralSword.cs" />
+    <Compile Include="SkillEngine\Effects\EfBurningWrath.cs" />
+    <Compile Include="SkillEngine\Effects\EfChiArmor.cs" />
+    <Compile Include="SkillEngine\Effects\EfFlowingBlade.cs" />
+    <Compile Include="SkillEngine\Effects\EfHiddenAftermath.cs" />
+    <Compile Include="SkillEngine\Effects\EfImprovedGrip.cs" />
+    <Compile Include="SkillEngine\Effects\EfDefault.cs" />
+    <Compile Include="SkillEngine\Effects\EfInstantReflex.cs" />
+    <Compile Include="SkillEngine\Effects\EfIronSkin.cs" />
+    <Compile Include="SkillEngine\Effects\EfLethalBlow.cs" />
+    <Compile Include="SkillEngine\Effects\EfLifeDrainer.cs" />
+    <Compile Include="SkillEngine\Effects\EfPointPiercing.cs" />
+    <Compile Include="SkillEngine\Effects\EfPreciseness.cs" />
+    <Compile Include="SkillEngine\Effects\EfReflectionWall.cs" />
+    <Compile Include="SkillEngine\Effects\EfSharpenedSwords.cs" />
+    <Compile Include="SkillEngine\Effects\EfSwordDrift.cs" />
+    <Compile Include="SkillEngine\Effects\EfTigersRage.cs" />
+    <Compile Include="SkillEngine\SeUtils.cs" />
+    <Compile Include="SkillEngine\SkillEngine.cs" />
+    <Compile Include="Structures\Visible.cs" />
+    <Compile Include="WorldServer.cs" />
+    <Compile Include="InnerNetwork\InnerNetworkClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseFactory\DatabaseFactory.csproj">
+      <Project>{B0287521-3B19-4B7B-9826-41DC15FAB4C6}</Project>
+      <Name>DatabaseFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{0C0CA346-FEFF-46A3-BC64-03E0981AD1A0}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Global\Global.csproj">
+      <Project>{3DA233D3-BF30-4E32-8E36-1814F324FDAB}</Project>
+      <Name>Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\packages\Scs-Sources\Scs-Sources\Scs\Scs.csproj">
+      <Project>{0DC81B09-3ABF-4BB3-8C08-4E8EE4432BDC}</Project>
+      <Name>Scs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{645A8FAD-D6F0-400E-826B-D57B8CA0E65A}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InnerNetwork\Read\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Config\Custom.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\Rate.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\SysMessage.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\UseItemTrigGer.lua">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Welcome.lua">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+xcopy /s /y "$(SolutionDir)\packages\NLua.1.3.0.2\lib\native\x64\*.*" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

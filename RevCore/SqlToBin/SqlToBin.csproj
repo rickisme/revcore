@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B29429DE-85E4-4CFD-8709-3B9BECFD4FFB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SqlToBin</RootNamespace>
+    <AssemblyName>SqlToBin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\SWorking\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PublicDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PublicDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_BOSSDROP.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_DROP.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_DROP_GS.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_Gg.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_ITEM.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_KONGFU.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_MAP.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_MONSTER.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_NPC.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_NPC_SL.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_OPEN.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_SELL.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_XWWL_VOME.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XWWL_kill.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="制作物品列表.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="升天气功.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="武勋BUFF增幅.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="物品兑换.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="石头属性效果.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="等级奖励.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="自定义转职属性.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="装备检测.cs">
+      <DependentUpon>PublicDBModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="PublicDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PublicDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PublicDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PublicDBModel.edmx</DependentUpon>
+      <LastGenOutput>PublicDBModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PublicDBModel.edmx.diagram">
+      <DependentUpon>PublicDBModel.edmx</DependentUpon>
+    </None>
+    <None Include="PublicDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PublicDBModel.edmx</DependentUpon>
+      <LastGenOutput>PublicDBModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cryption\Cryption.csproj">
+      <Project>{f58765cb-c9b2-4be9-a7f4-3bf457b7d452}</Project>
+      <Name>Cryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{0c0ca346-feff-46a3-bc64-03e0981ad1a0}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{645a8fad-d6f0-400e-826b-d57b8ca0e65a}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

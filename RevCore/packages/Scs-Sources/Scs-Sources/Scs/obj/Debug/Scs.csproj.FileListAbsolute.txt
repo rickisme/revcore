@@ -1,0 +1,6 @@
+D:\Project\RevCore\trunk\RevCore\packages\Scs-Sources\Scs-Sources\Scs\bin\Debug\Scs.XML
+D:\Project\RevCore\trunk\RevCore\packages\Scs-Sources\Scs-Sources\Scs\bin\Debug\Scs.dll
+D:\Project\RevCore\trunk\RevCore\packages\Scs-Sources\Scs-Sources\Scs\bin\Debug\Scs.pdb
+D:\Project\RevCore\trunk\RevCore\packages\Scs-Sources\Scs-Sources\Scs\obj\Debug\Scs.csprojResolveAssemblyReference.cache
+D:\Project\RevCore\trunk\RevCore\packages\Scs-Sources\Scs-Sources\Scs\obj\Debug\Scs.dll
+D:\Project\RevCore\trunk\RevCore\packages\Scs-Sources\Scs-Sources\Scs\obj\Debug\Scs.pdb

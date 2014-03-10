@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C0CA346-FEFF-46A3-BC64-03E0981AD1A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\SWorking\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Nini">
+      <HintPath>..\packages\Trove.Nini.1.1.0.0\lib\net20\Nini.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ConfigReader.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Enums\AttackStatus.cs" />
+    <Compile Include="Enums\AttackType.cs" />
+    <Compile Include="Enums\ChatType.cs" />
+    <Compile Include="Enums\CheckNameResult.cs" />
+    <Compile Include="Enums\CountryCode.cs" />
+    <Compile Include="Enums\CreatureState.cs" />
+    <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\ItemCategory.cs" />
+    <Compile Include="Enums\ItemPickUp.cs" />
+    <Compile Include="Enums\ItemState.cs" />
+    <Compile Include="Enums\NpcSize.cs" />
+    <Compile Include="Enums\ObjectFamily.cs" />
+    <Compile Include="Enums\PlayerClass.cs" />
+    <Compile Include="Enums\PlayerMode.cs" />
+    <Compile Include="Enums\SkillEngine\AbilityCondition.cs" />
+    <Compile Include="Enums\SkillEngine\SkillType.cs" />
+    <Compile Include="Enums\StorageType.cs" />
+    <Compile Include="Interfaces\IAi.cs" />
+    <Compile Include="Interfaces\IConnection.cs" />
+    <Compile Include="Interfaces\IController.cs" />
+    <Compile Include="Interfaces\IEffect.cs" />
+    <Compile Include="Interfaces\IRecvPacket.cs" />
+    <Compile Include="Interfaces\ISendPacket.cs" />
+    <Compile Include="Interfaces\IVisible.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Structures\Account\Account.cs" />
+    <Compile Include="Structures\Creature\Creature.cs" />
+    <Compile Include="Structures\Creature\CreatureBaseStats.cs" />
+    <Compile Include="Structures\Creature\CreatureEffectsImpact.cs" />
+    <Compile Include="Structures\Creature\CreatureLifeStats.cs" />
+    <Compile Include="Structures\Geometry\Geom.cs" />
+    <Compile Include="Structures\Geometry\Point3D.cs" />
+    <Compile Include="Structures\Npc\Npc.cs" />
+    <Compile Include="Structures\Player\Crafts.cs" />
+    <Compile Include="Structures\Player\PrivateShop.cs" />
+    <Compile Include="Structures\Player\Quests.cs" />
+    <Compile Include="Structures\Player\Settings.cs" />
+    <Compile Include="Structures\Player\Skills.cs" />
+    <Compile Include="Structures\Player\Abilities.cs" />
+    <Compile Include="Structures\Player\MoveItemArgs.cs" />
+    <Compile Include="Structures\Player\Player.cs" />
+    <Compile Include="Structures\Player\PlayerData.cs" />
+    <Compile Include="Structures\Player\Storage.cs" />
+    <Compile Include="Structures\Player\StorageItem.cs" />
+    <Compile Include="Structures\Player\UseSkillArgs.cs" />
+    <Compile Include="Structures\QuestEngine\Quest.cs" />
+    <Compile Include="Structures\RxjhObject.cs" />
+    <Compile Include="Structures\SkillEngine\Ability.cs" />
+    <Compile Include="Structures\SkillEngine\Attack.cs" />
+    <Compile Include="Structures\Statistical.cs" />
+    <Compile Include="Structures\Template\ExpTemplate.cs" />
+    <Compile Include="Structures\Template\Item\CategorieStats\EquipmentStat.cs" />
+    <Compile Include="Structures\Template\Item\CategorieStats\IDefaultCategorieStat.cs" />
+    <Compile Include="Structures\Template\Item\ItemTemplate.cs" />
+    <Compile Include="Structures\Template\Item\Passivity.cs" />
+    <Compile Include="Structures\Template\MapTemplate.cs" />
+    <Compile Include="Structures\Template\NpcTemplate.cs" />
+    <Compile Include="Structures\Template\Servers\Channel.cs" />
+    <Compile Include="Structures\Template\Servers\Server.cs" />
+    <Compile Include="Structures\SkillEngine\Skill.cs" />
+    <Compile Include="Structures\Template\SpawnTemplate.cs" />
+    <Compile Include="Structures\Uid.cs" />
+    <Compile Include="Structures\UidFactory.cs" />
+    <Compile Include="Structures\World\Abnormal.cs" />
+    <Compile Include="Structures\World\AttackResult.cs" />
+    <Compile Include="Structures\World\Item.cs" />
+    <Compile Include="Structures\World\MapInstance.cs" />
+    <Compile Include="Structures\World\Party\Party.cs" />
+    <Compile Include="Structures\Player\ShopItem.cs" />
+    <Compile Include="Structures\World\WorldPosition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{645A8FAD-D6F0-400E-826B-D57B8CA0E65A}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

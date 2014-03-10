@@ -1,0 +1,56 @@
+﻿<Window x:Class="ItemEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Items Editor" Height="608" Width="664"  >  <!-- Loaded="Window_Loaded"-->
+    <Grid>
+        <!--Grid.ColumnDefinitions>
+            <ColumnDefinition Width="224"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="544*"/>
+        </Grid.RowDefinitions>
+        <Menu Height="25" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="_File">
+                <MenuItem Header="Open" Click="MenuItem_Click_Open" />
+                <MenuItem Header="Close" />
+                <Separator />
+                <MenuItem Header="Save" IsEnabled="False" />
+                <MenuItem Header="Save As..." IsEnabled="False" />
+                <Separator />
+                <MenuItem Header="Exit" />
+            </MenuItem>
+            <MenuItem Header="_Build">
+                <MenuItem Header="Make" Click="MenuItem_Click_Make" />
+            </MenuItem>
+        </Menu>
+        <Label Content="File List" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="49"/>
+        <ListBox x:Name="ItemListBox" Margin="10,36,0,15" Grid.Row="1" MouseDoubleClick="ItemListBox_MouseDoubleClick"/>
+        <Label Content="Item ID : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemid" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,36,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Name : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemname" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,67,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Level : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,98,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemlevel" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,98,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Reside1 : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,129,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemreside1" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,129,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Reside2 : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,160,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemreside2" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,160,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Weight : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,191,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemweight" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,191,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item MaxAtk : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,222,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemmaxatk" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,222,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item MinAtk : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,253,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemminatk" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,253,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Def : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,284,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemdef" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,284,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Price : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,315,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="26"/>
+        <TextBox x:Name="textbox_itemprice" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="121,315,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" VerticalContentAlignment="Center"/>
+        <Label Content="Item Desc : " Grid.Column="1" HorizontalAlignment="Left" Margin="10,346,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106" HorizontalContentAlignment="Right" Background="#FFD4DCE8" Foreground="#FF0A0707" Height="147"/>
+        <TextBox x:Name="textbox_itemdesc" Grid.Column="1" HorizontalAlignment="Left" Height="147" Margin="121,346,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="296"/>
+        <Button Content="Save" Grid.Column="1" HorizontalAlignment="Left" Margin="342,507,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="29"/>
+        <Button Content="Update" Grid.Column="1" HorizontalAlignment="Left" Margin="262,507,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Height="29"/>
+        <Label x:Name="textbox_itemcount" Content="Label" HorizontalAlignment="Left" Margin="159,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="65"/-->
+    </Grid>
+</Window>
