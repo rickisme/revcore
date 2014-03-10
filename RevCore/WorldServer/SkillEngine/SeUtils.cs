@@ -91,6 +91,12 @@ namespace WorldServer.SkillEngine
         public static int CalculateSkillAttackDamage(Creature creature, Creature target, Skill skill)
         {
             int damage = 0;
+            creature.Attack.AttackAction = skill.Effect;
+            int atk = creature.GameStats.Attack;
+            int satk = skill.Attack;
+            creature.Attack.Results = new List<int>();
+            for (int i = 0; i < 5; i++)
+                creature.Attack.Results.Add(0);
 
             Player player = creature as Player;
             if(player != null)
@@ -98,15 +104,46 @@ namespace WorldServer.SkillEngine
                 switch (player.PlayerData.Class)
                 {
                     case Data.Enums.PlayerClass.Blademan:
-
+                       
                         break;
                     case Data.Enums.PlayerClass.Swordman:
 
                         break;
-
-                    default:
+                    case Data.Enums.PlayerClass.Spearman:
 
                         break;
+                    case Data.Enums.PlayerClass.Bowman:
+
+                        break;
+                    case Data.Enums.PlayerClass.Medic:
+
+                        break;
+                    case Data.Enums.PlayerClass.Ninja:
+
+                        break;
+                    case Data.Enums.PlayerClass.Busker:
+
+                        break;
+                    case Data.Enums.PlayerClass.Hanbi:
+
+                        break;
+                    default:
+                        if (Funcs.IsLuck(player.GameStats.CriticalAttackRate))
+                        {
+                            damage = (int)(((((atk + satk) - (target.GameStats.Defense * 0.7)) * 1.5) + (player.GameStats.Accuracy / 4)) * 2.0);
+                            if (player.IsRage) damage = (int)(damage * 1.3);
+                            damage = Funcs.Random().Next(damage - 5, damage + 5);
+                            creature.Attack.Results[0] = damage;
+                            return damage;
+                        }
+                        else
+                        {
+                            damage = (int)(((atk + satk) - (target.GameStats.Defense * 0.7)) * 1.5);
+                            damage = Funcs.Random().Next(damage - 5, damage + 5);
+                            creature.Attack.Results[0] = damage;
+                            return damage;
+                        }
+                       
                 }
             }
 

@@ -109,7 +109,7 @@ namespace WorldServer.SkillEngine
                                              () => GlobalLogic.AttackStageEnd(creature),
                                              () => GlobalLogic.AttackFinished(creature));
 
-                    int damage = SeUtils.CalculateDefaultAttackDamage(creature, target, creature.GameStats.Attack);
+                    int damage = SeUtils.CalculateSkillAttackDamage(creature, target, skill);
 
                     if (player != null)
                         VisibleService.Send(player, new SpAttack(player, player.Attack));
