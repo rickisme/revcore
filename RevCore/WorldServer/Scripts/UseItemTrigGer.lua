@@ -5,5 +5,8 @@
 	elseif ItemId==1000000104 then
 		RemoveItem(Player, Slot, 1)
 		UpdateHpAndMp(Player, 0, 70)
+	elseif ItemId==1000000902 then
+		RemoveItem(Player, Slot, 1)
+		Teleport(Player, 101)
 	end
 end

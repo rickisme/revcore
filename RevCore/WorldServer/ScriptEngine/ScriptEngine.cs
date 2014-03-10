@@ -1,5 +1,6 @@
 ﻿using Data.Enums;
 using Data.Structures.Player;
+using Data.Structures.World;
 using Global.Interfaces;
 using Global.Logic;
 using NLua;
@@ -87,7 +88,11 @@ namespace WorldServer.ScriptEngine
 
             CreatureLogic.UpdateCreatureStats(player);
         }
-
+        public void Teleport(Player player, int mapId)
+        {
+            WorldPosition Position = Data.Data.BindPoints[mapId][0];
+            Global.Global.TeleportService.ForceTeleport(player, Position);
+        }
         public void Event()
         {
             this.UseItemEvent = Lua.GetFunction("UseItmeTrigGer");
